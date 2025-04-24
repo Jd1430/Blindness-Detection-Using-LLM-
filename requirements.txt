@@ -1,0 +1,11 @@
+pil
+efficientnet_pytorch
+models
+os
+pkg_resources
+re
+requests==2.32.3
+streamlit==1.44.1
+torch==2.6.0
+torchvision==0.21.0
+transformers==4.49.0
