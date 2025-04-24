@@ -11,9 +11,12 @@ This Streamlit web application allows users to upload retina (eye) images for au
 
 
 ## Output Snapshots
-- ![Screenshot 2025-03-26 145503](https://github.com/user-attachments/assets/83dc93df-f947-43d8-aaed-e7b4179d813e)
-- ![Screenshot 2025-03-26 145632](https://github.com/user-attachments/assets/1d4317f1-030e-4c71-ace5-329bd29aaff3)
-- ![Screenshot 2025-03-26 150313](https://github.com/user-attachments/assets/317000eb-9167-47f6-9ba7-0113bd39ece6)
+![Screenshot 2025-04-24 103602](https://github.com/user-attachments/assets/e7ebac19-7174-4ef7-bfa8-54bb15f8b661)
+![Screenshot 2025-04-24 103424](https://github.com/user-attachments/assets/73dbbc94-c45d-441c-8772-d4dd247eb761)
+![Screenshot 2025-04-24 103352](https://github.com/user-attachments/assets/50d8d750-b1ed-4c83-87cb-eacb041279fe)
+![Screenshot 2025-04-24 103729](https://github.com/user-attachments/assets/beb8da62-0884-4075-be1a-2f25f854bde3)
+![Screenshot 2025-04-24 103756](https://github.com/user-attachments/assets/e573b09f-57ca-4a3c-82bc-7a04eacd903b)
+
 
 ## 🧱 Tech Stack
 
@@ -31,22 +34,21 @@ This Streamlit web application allows users to upload retina (eye) images for au
 ```
 📂 Blindness Detection
 │── app.py                 # Main Streamlit application
+│── models
+    │── blindness_model.py # Contains the BlindnessModel class
+    │── caption_generator.py # Extracts image captions for LLM prompt
 │── requirements.txt        # Dependencies
-│── .env                    # API key (to be created by user)
+│── .streamlit
+    │── secrets.toml # Contains API keys (Groq)                
 ```
-
-bash
-Copy code
-
-
 
 ## 🛠️ Installation
 
 Clone the repository and navigate into the project folder:
 
 ```bash
-git clone https://github.com/yourusername/fake-news-detector.git
-cd fake-news-detector
+git clone https://github.com/yourusername/blindness-detection-app.git
+cd blindness-detection-app
 ```
 
 ### Install Dependencies
@@ -59,10 +61,10 @@ pip install -r requirements.txt
 
 ### Set Up Environment Variables
 
-Create a `.env` file in the project directory and add your **Google Gemini API Key**:
+Create a file .streamlit/secrets.toml and add your API key: **Groq API Key**:
 
 ```
-GEMINI_API_KEY=your_api_key_here
+GROQ_API_KEY=your_api_key_here
 ```
 
 ## ▶️ Running the App
@@ -73,19 +75,17 @@ Launch the Streamlit app with:
 streamlit run app.py
 ```
 
+## 📸 Usage
 
+- Upload a retina image using the sidebar.
+- View AI prediction with confidence.
+- Click "Explain Diagnosis with AI" to get a simplified explanation.
+- Chat with the AI assistant to ask questions about the condition.
 
-## 🖼️ Usage
+## 📌 Notes
+- Ensure good-quality retina images for accurate results.
+- This app is not a substitute for professional medical advice. Always consult a doctor for official diagnosis or treatment.
 
-### 1️⃣ Enter Text
-- Paste a news article into the text area.
-- Click **Check News** to analyze it.
-- The app will determine if the news is real or fake and provide reasoning.
-
-### 2️⃣ Enter URL
-- Provide a URL to a news article.
-- The app will extract the content and analyze it using Google Gemini AI.
-- Click **Check News** to see the result.
 
 ## 🔗 Contact
 For any questions or collaborations, feel free to reach out:
